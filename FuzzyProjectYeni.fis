@@ -1,0 +1,47 @@
+[System]
+Name='FuzzyProjectYeni'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='eggsize'
+Range=[41 62]
+NumMFs=3
+MF1='small':'trapmf',[41 41 48.35 50.45]
+MF2='medium':'trapmf',[49.4 50.45 55.7 56.77]
+MF3='big':'trapmf',[55.7 58.8 62 62]
+
+[Input2]
+Name='boilingtime'
+Range=[8 20]
+NumMFs=3
+MF1='low':'trapmf',[0 0 11 12.17]
+MF2='medium':'trapmf',[10 12 13.5 14]
+MF3='high':'trapmf',[13.7 14.5 20 20]
+
+[Output1]
+Name='eggtype'
+Range=[0 100]
+NumMFs=3
+MF1='softboiled':'trapmf',[0 0 40 50]
+MF2='mediumboiled':'trimf',[45 50 55]
+MF3='hardboiled':'trapmf',[50 60 100 100]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 2 (1) : 1
+1 3, 3 (1) : 1
+2 1, 1 (1) : 1
+2 2, 2 (1) : 1
+2 3, 3 (1) : 1
+3 1, 1 (1) : 1
+3 2, 2 (1) : 1
+3 3, 3 (1) : 1
